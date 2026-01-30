@@ -92,9 +92,9 @@ void PlayfairCipher::setKey(const std::string& key)
     // }
 
     // std::cout << "Coordinate to Character map:" << std::endl;
-    for (const auto& pair : coordToChar_) {
-        std::cout << "  (" << pair.first.first << ", " << pair.first.second << ") -> " << pair.second << std::endl;
-    }
+    // for (const auto& pair : coordToChar_) {
+    //     std::cout << "  (" << pair.first.first << ", " << pair.first.second << ") -> " << pair.second << std::endl;
+    // }
 
 }
 
