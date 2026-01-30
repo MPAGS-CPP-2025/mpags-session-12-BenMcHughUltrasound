@@ -22,16 +22,23 @@ void PlayfairCipher::setKey(const std::string& key)
     key_ += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     // Make sure the key is upper case
-    std::transform(std::begin(key_), std::end(key_), std::begin(key_),
-                   ::toupper);
+    std::transform(std::begin(key_), std::end(key_), std::begin(key_),::toupper);
 
     // Remove non-alphabet characters
+    auto iter = std::remove_if(std::begin(key_), std::end(key_),[](const char c) { return !std::isalpha(c); });
+    key_.erase(iter, std::end(key_));
 
     // Change J -> I
+    std::transform(std::begin(key_), std::end(key_), std::begin(key_), [](const char c) { return c == 'J' ? 'I' : c; });
 
     // Remove duplicated letters
 
+
     // Store the coordinates of each letter
+    // The grid is 5x5, so calculate row and column from index
+
+    
+
 }
 
 std::string PlayfairCipher::applyCipher(const std::string& inputText,

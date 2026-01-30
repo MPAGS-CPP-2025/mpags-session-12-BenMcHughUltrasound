@@ -4,6 +4,8 @@
 #include "CipherMode.hpp"
 
 #include <string>
+#include <map>
+#include <utility>
 
 /**
  * \file PlayfairCipher.hpp
@@ -43,6 +45,8 @@ class PlayfairCipher {
   private:
     /// The cipher key
     std::string key_{""};
+    
+
 };
 
 #endif
