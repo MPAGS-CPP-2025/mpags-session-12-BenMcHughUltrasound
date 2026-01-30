@@ -4,6 +4,8 @@
 #include "CipherMode.hpp"
 
 #include <string>
+#include <map>
+#include <utility>
 
 /**
  * \file PlayfairCipher.hpp
@@ -43,6 +45,21 @@ class PlayfairCipher {
   private:
     /// The cipher key
     std::string key_{""};
+    
+    /// Type alias for coordinate pairs (row, column)
+    using Coordinate = std::pair<size_t, size_t>;
+    
+    /// Type alias for char to coordinate map
+    using CharToCoordMap = std::map<char, Coordinate>;
+    
+    /// Type alias for coordinate to char map
+    using CoordToCharMap = std::map<Coordinate, char>;
+    
+    /// Map from character to its coordinate in the cipher grid
+    CharToCoordMap charToCoord_{};
+    
+    /// Map from coordinate to the character at that position in the cipher grid
+    CoordToCharMap coordToChar_{};
 };
 
 #endif
